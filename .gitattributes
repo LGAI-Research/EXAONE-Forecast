@@ -1,0 +1,3 @@
+# Keep the notice documents byte-identical to what was issued (CRLF included)
+Notice.md -text
+LICENSE   -text
