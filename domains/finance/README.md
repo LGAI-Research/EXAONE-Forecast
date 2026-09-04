@@ -9,10 +9,10 @@
 <br>
 
 <div align="center">
-  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance" style="text-decoration: none;">
+  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/🤗-Weights-FC926C?style=for-the-badge" alt="Weights">
   </a>
-  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf" style="text-decoration: none;">
+  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/📄-Technical%20Report-4B5563?style=for-the-badge" alt="Technical Report">
   </a>
   <img src="https://img.shields.io/badge/version-1.0-A451E4?style=for-the-badge" alt="Version 1.0">
@@ -103,7 +103,7 @@ EXAONE Finance ranks **first in all three tiers** for a perfect rank sum of **3*
 strongest baseline at 14.
 
 <div align="center">
-  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance/resolve/main/figures/fig_tier_transposed.png" alt="Average rank per tier, EXAONE Finance against the strongest baselines" width="100%">
+  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/figures/fig_tier_transposed.png" alt="Average rank per tier, EXAONE Finance against the strongest baselines" width="100%">
   <br>
   <em>Figure 1. Average rank within each tier (lower is better). EXAONE Finance leads all three,
   and no baseline is consistently strong across them.</em>
@@ -113,7 +113,7 @@ At **202M parameters** it sits on the Pareto frontier, outperforming models more
 magnitude larger — the scaling law familiar from general-domain forecasting does not yet hold here.
 
 <div align="center">
-  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance/resolve/main/figures/fig_size_vs_perf.png" alt="Aggregate rank versus parameter count" width="88%">
+  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/figures/fig_size_vs_perf.png" alt="Aggregate rank versus parameter count" width="88%">
   <br>
   <em>Figure 2. Aggregate rank versus model size. A larger model does not reliably improve the rank.</em>
 </div>
@@ -122,14 +122,14 @@ It is also the **only model that wins its head-to-head comparison against all 43
 per-opponent win rates from 0.51 to 0.90.
 
 <div align="center">
-  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance/resolve/main/figures/fig_winrate.png" alt="Pairwise win rate between every pair of models" width="88%">
+  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/figures/fig_winrate.png" alt="Pairwise win rate between every pair of models" width="88%">
   <br>
   <em>Figure 3. Pairwise win rate, pooled over all (tier, spec, metric) cells. EXAONE Finance is the
   only model whose entire row exceeds 0.5.</em>
 </div>
 
 Full protocol and results are in the
-[Technical Report](https://huggingface.co/LG-AI-Research/EXAONE-Finance/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf).
+[Technical Report](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf).
 
 > The technical report and the figures above refer to this model by its full name,
 > **EXAONE Forecast for Finance**. **EXAONE Finance** is the short form used throughout this
@@ -166,7 +166,7 @@ A runnable end-to-end example is in [`quickstart.py`](./quickstart.py).
 |---|---|---|---|---|
 | `exaone-finance-1.0.safetensors` | 1.0 | 202M | float32 | 21-quantile head; loaded by `from_pretrained("default")` |
 
-The file lives in the [Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Finance)
+The file lives in the [Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0)
 alongside its `config.json`, which describes the architecture. `from_pretrained` fetches both and
 loads the weights verbatim.
 
@@ -205,7 +205,7 @@ multivariate financial panels, is a promising direction for further gains.
 
 The **model weights** are released under the **EXAONE AI Model License Agreement 1.2 - NC**, which
 limits use to non-commercial research and education. The full terms ship with the weights on the
-[Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Finance).
+[Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0).
 
 The **code** in this repository is licensed separately under the
 [BSD-3-Clause-LG AI Research License](../../LICENSE), which permits commercial use.

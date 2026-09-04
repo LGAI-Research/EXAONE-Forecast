@@ -8,7 +8,7 @@
 <br>
 
 <div align="center">
-  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance" style="text-decoration: none;">
+  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/🤗-HuggingFace-FC926C?style=for-the-badge" alt="HuggingFace">
   </a>
   <a href="https://github.com/LGAI-Research/EXAONE-Forecast" style="text-decoration: none;">
@@ -41,7 +41,7 @@ The code here is permissively licensed; the released **weights are non-commercia
 
 | Model | Domain | Version | Weights | Documentation |
 |---|---|---|---|---|
-| **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance`](https://huggingface.co/LG-AI-Research/EXAONE-Finance) | [`domains/finance`](domains/finance/README.md) |
+| **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0) | [`domains/finance`](domains/finance/README.md) |
 
 Each model page carries its own architecture, evaluation results, intended use, and limitations.
 Weights live in that model's own Hugging Face repository and are fetched on first use.
