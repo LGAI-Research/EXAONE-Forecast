@@ -4,7 +4,7 @@
     python domains/finance/quickstart.py
 
 The released weights are downloaded from the Hugging Face Hub on first use
-(LG-AI-Research/EXAONE-Finance) and cached locally.
+(LG-AI-Research/EXAONE-Finance-1.0) and cached locally.
 """
 import numpy as np
 

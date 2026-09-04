@@ -10,7 +10,7 @@ variate mixing is a group-aware pooling MLP, so cost grows linearly in both
 sequence length and variate count. This design is particular to this model and
 is not shared family-wide.
 
-The weights are published separately at ``LG-AI-Research/EXAONE-Finance`` on the
+The weights are published separately at ``LG-AI-Research/EXAONE-Finance-1.0`` on the
 Hugging Face Hub and are covered by the EXAONE AI Model License Agreement
 1.2 - NC (non-commercial). Installing this package does not grant commercial
 rights to the weights it downloads.
@@ -41,7 +41,7 @@ __all__ = [
 VERSION = "1.0"
 
 #: Hugging Face repository holding the released weights.
-REPO_ID = "LG-AI-Research/EXAONE-Finance"
+REPO_ID = "LG-AI-Research/EXAONE-Finance-1.0"
 
 #: Published checkpoints, keyed by name.
 CHECKPOINTS = {
