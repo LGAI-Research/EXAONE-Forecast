@@ -132,7 +132,7 @@ Full protocol and results are in the
 [Technical Report](https://arxiv.org/abs/2609.04239).
 
 > The technical report introduces this model as **EXAONE Forecast for Finance**
-> in its abstract. **EXAONE Finance** is the name used everywhere else — in the
+> in its abstract. **EXAONE Finance** is the name used everywhere else, in the
 > report, in the figures above, throughout this repository, and on the Hub.
 
 <br>
@@ -215,14 +215,13 @@ The **code** in this repository is licensed separately under the
 ## Citation
 
 ```bibtex
-@techreport{lgai2026exaoneforecastfinance,
-  title       = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
-  author      = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
-                 Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
-                 Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
-  year        = {2026},
-  institution = {LG AI Research},
-  note        = {Technical Report}
+@article{lgai2026exaonefinance,
+  title   = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
+  author  = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
+             Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
+             Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
+  journal = {arXiv preprint arXiv:2609.04239},
+  year    = {2026}
 }
 ```
 

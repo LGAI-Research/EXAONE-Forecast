@@ -184,14 +184,13 @@ Third-party open source components and their licenses are listed in [Notice.md](
 ## Citation
 
 ```bibtex
-@techreport{lgai2026exaoneforecastfinance,
-  title       = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
-  author      = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
-                 Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
-                 Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
-  year        = {2026},
-  institution = {LG AI Research},
-  note        = {Technical Report}
+@article{lgai2026exaonefinance,
+  title   = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
+  author  = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
+             Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
+             Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
+  journal = {arXiv preprint arXiv:2609.04239},
+  year    = {2026}
 }
 ```
 
