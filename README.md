@@ -39,9 +39,9 @@ The code here is permissively licensed; the released **weights are non-commercia
 
 ## Available models
 
-| Model | Domain | Version | Weights | Documentation |
-|---|---|---|---|---|
-| **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0) | [`domains/finance`](domains/finance/README.md) |
+| Model | Domain | Version | Weights | Technical report | Documentation |
+|---|---|---|---|---|---|
+| **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0) | [arXiv:2609.04239](https://arxiv.org/pdf/2609.04239) | [`domains/finance`](domains/finance/README.md) |
 
 Each model page carries its own architecture, evaluation results, intended use, and limitations.
 Weights live in that model's own Hugging Face repository and are fetched on first use.
@@ -185,7 +185,7 @@ Third-party open source components and their licenses are listed in [Notice.md](
 
 ```bibtex
 @techreport{lgai2026exaoneforecastfinance,
-  title       = {EXAONE Forecast for Finance: An Attention-free Time Series Foundation Model for Financial Time Series},
+  title       = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
   author      = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
                  Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
                  Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},

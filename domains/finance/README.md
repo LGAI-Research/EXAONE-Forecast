@@ -12,7 +12,7 @@
   <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/🤗-Weights-FC926C?style=for-the-badge" alt="Weights">
   </a>
-  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf" style="text-decoration: none;">
+  <a href="https://arxiv.org/abs/2609.04239" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/📄-Technical%20Report-4B5563?style=for-the-badge" alt="Technical Report">
   </a>
   <img src="https://img.shields.io/badge/version-1.0-A451E4?style=for-the-badge" alt="Version 1.0">
@@ -129,11 +129,11 @@ per-opponent win rates from 0.51 to 0.90.
 </div>
 
 Full protocol and results are in the
-[Technical Report](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0/resolve/main/EXAONE_Finance_v1.0_Technical_Report.pdf).
+[Technical Report](https://arxiv.org/abs/2609.04239).
 
-> The technical report and the figures above refer to this model by its full name,
-> **EXAONE Forecast for Finance**. **EXAONE Finance** is the short form used throughout this
-> repository and on the Hub.
+> The technical report introduces this model as **EXAONE Forecast for Finance**
+> in its abstract. **EXAONE Finance** is the name used everywhere else — in the
+> report, in the figures above, throughout this repository, and on the Hub.
 
 <br>
 
@@ -216,7 +216,7 @@ The **code** in this repository is licensed separately under the
 
 ```bibtex
 @techreport{lgai2026exaoneforecastfinance,
-  title       = {EXAONE Forecast for Finance: An Attention-free Time Series Foundation Model for Financial Time Series},
+  title       = {EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series},
   author      = {Lee, Seunghan and Lee, Jaehoon and Seo, Jun and Lim, Tae Yoon and
                  Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
                  Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
