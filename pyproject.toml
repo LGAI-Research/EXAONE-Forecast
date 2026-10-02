@@ -16,6 +16,7 @@ keywords = [
     "foundation-model",
     "attention-free",
     "finance",
+    "demand-forecasting",
     "exaone",
 ]
 classifiers = [
@@ -23,15 +24,13 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
-# Shared by every model in the family: the backbone, the checkpoint loader,
-# and the Hub download path. Installing the package bare gives you all of it.
+# Shared by every model in the family: tensors, the checkpoint loader, and the
+# Hub download path. Installing the package bare gives you all of it.
 dependencies = [
     "torch>=2.0",
     "numpy>=1.20",
-    "transformers>=4.30",
     "einops>=0.6",
     "safetensors>=0.3",
-    "huggingface_hub>=0.20",
 ]
 
 # Per-model extras. A model that needs a dependency the rest of the family does
@@ -40,16 +39,24 @@ dependencies = [
 #
 #     pip install "exaone-forecast[finance]"
 #
-# EXAONE Finance runs on the shared dependencies alone, so its extra is empty.
-# It is declared anyway: the selector is part of the published install command,
-# and keeping it stable means a future model can add requirements without
-# changing what existing users install.
+# EXAONE Finance builds on transformers model classes and downloads through
+# huggingface_hub. EXAONE Demand runs on the shared dependencies alone, so its
+# extra is empty; it is declared anyway, because the selector is part of the
+# published install command and keeping it stable means the model can add
+# requirements later without changing what existing users install.
 [project.optional-dependencies]
-finance = []
+finance = [
+    "transformers>=4.30",
+    "huggingface_hub>=0.20",
+]
+demand = []
 # Union of every extra above. Listed literally rather than as a self-reference
 # ("exaone-forecast[finance]"), which pip would try to resolve from an index the
 # package is not published to.
-all = []
+all = [
+    "transformers>=4.30",
+    "huggingface_hub>=0.20",
+]
 
 [project.urls]
 Homepage = "https://github.com/LGAI-Research/EXAONE-Forecast"
@@ -59,7 +66,7 @@ package-dir = { "" = "src" }
 # Ship the license and the open-source notice inside the installed distribution,
 # not only in the source tree: an install from git builds a wheel and installs
 # that, so anything omitted here never reaches the user's environment.
-license-files = ["LICENSE", "Notice.md"]
+license-files = ["LICENSE", "Notice.md", "domains/demand/Notice.md"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

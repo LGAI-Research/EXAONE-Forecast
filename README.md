@@ -31,9 +31,9 @@ not change when you switch models.
 The code here is permissively licensed; the released **weights are non-commercial** — see
 [License](#license).
 
-**EXAONE Finance** is the first released member. See
-[Available models](#available-models) and its
-[model page](domains/finance/README.md).
+**EXAONE Finance** and **EXAONE Demand** are the released members. See
+[Available models](#available-models) and their model pages
+([finance](domains/finance/README.md), [demand](domains/demand/README.md)).
 
 <br>
 
@@ -42,6 +42,7 @@ The code here is permissively licensed; the released **weights are non-commercia
 | Model | Domain | Version | Weights | Technical report | Documentation |
 |---|---|---|---|---|---|
 | **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0) | [arXiv:2609.04239](https://arxiv.org/pdf/2609.04239) | [`domains/finance`](domains/finance/README.md) |
+| **EXAONE Demand** | Demand forecasting | 1.0 | [`LG-AI-Research/EXAONE-Demand-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0) | [arXiv:2609.30880](https://arxiv.org/pdf/2609.30880) | [`domains/demand`](domains/demand/README.md) |
 | **EXAONE Forecast** | General time series | — | — | [PDF](domains/general/EXAONE_Forecast_Technical_Report.pdf) | — |
 
 Each model page carries its own architecture, evaluation results, intended use, and limitations.
@@ -54,7 +55,8 @@ Weights live in that model's own Hugging Face repository and are fetched on firs
 - **Python** ≥ 3.9
 - **PyTorch** ≥ 2.0 &nbsp;(a **CUDA GPU is recommended**; CPU inference works and is fine for small
   workloads)
-- NumPy ≥ 1.20 · transformers ≥ 4.30 · einops ≥ 0.6 · safetensors ≥ 0.3 · huggingface_hub ≥ 0.20
+- NumPy ≥ 1.20 · einops ≥ 0.6 · safetensors ≥ 0.3, plus per model: transformers ≥ 4.30 ·
+  huggingface_hub ≥ 0.20 for EXAONE Finance, nothing further for EXAONE Demand
   &nbsp;(floors are the versions this release was validated against)
 
 Install the package, naming the model you want in the extras selector — the dependencies above
@@ -75,8 +77,10 @@ many models the family contains.
 
 From a checkout, `pip install ".[finance]"` (add `-e` for an editable install) does the same.
 
-`huggingface_hub` is included, so `from_pretrained` can fetch the released weights out of the box.
-Downloads honor the standard Hub environment (`HF_HOME` for the cache, `HF_TOKEN` for a gated repo).
+`from_pretrained` fetches the released weights out of the box: through `huggingface_hub` when it
+is installed (it comes with `[finance]`), otherwise with a plain HTTPS download from the same
+repository. Downloads honor the standard Hub environment (`HF_HOME` for the cache, `HF_TOKEN` for a
+gated repo).
 
 Verify the install:
 
@@ -127,6 +131,27 @@ lo, hi = fc.interval(series, horizon=20, lower=0.1, upper=0.9)
 </details>
 
 <details>
+<summary><b>Forecasting with EXAONE Demand</b></summary>
+
+```python
+import numpy as np
+from exaone_forecast.demand import from_pretrained
+
+fc = from_pretrained(device="cuda:0")          # downloads the weights on first use
+
+rng = np.random.default_rng(0)
+series = [(rng.random(300) < 0.2) * rng.integers(1, 9, 300) for _ in range(4)]
+
+q = fc.predict(series, horizon=28)             # (4, 21, 28)  all quantile levels
+yhat = fc.point(series, horizon=28)            # (4, 28)      median forecast
+lo, hi = fc.interval(series, horizon=28, lower=0.1, upper=0.9)
+```
+
+Install it with the `demand` selector: `pip install "exaone-forecast[demand] @ git+https://github.com/LGAI-Research/EXAONE-Forecast.git"`.
+
+</details>
+
+<details>
 <summary><b>Loading a local checkpoint</b></summary>
 
 ```python
@@ -142,8 +167,9 @@ conversion that corrupts them.
 
 </details>
 
-A runnable end-to-end example is in
-[`domains/finance/quickstart.py`](domains/finance/quickstart.py).
+Runnable end-to-end examples are in
+[`domains/finance/quickstart.py`](domains/finance/quickstart.py) and
+[`domains/demand/quickstart.py`](domains/demand/quickstart.py).
 
 <br>
 
@@ -154,13 +180,15 @@ A runnable end-to-end example is in
 - `src/exaone_forecast/_api.py` — the forecasting surface every model exposes
 - `src/exaone_forecast/_hub.py` · `_loading.py` — shared checkpoint download and loading
 - `src/exaone_forecast/finance/` — **EXAONE Finance**: entry point, model definition, forecaster
+- `src/exaone_forecast/demand/` — **EXAONE Demand**: entry point, model definition, adapter, forecaster
 - `domains/<model>/` — per-model documentation, technical report, and runnable example
 
 </div>
 
 A model owns its architecture outright: everything that defines EXAONE Finance lives under
-`finance/`, and nothing above that directory assumes a convolutional encoder, a quantile head, or
-any other design choice. A new model joins the family as its own subpackage plus its own `domains/`
+`finance/` and everything that defines EXAONE Demand under `demand/`, and nothing above those
+directories assumes a convolutional encoder, a transformer encoder, a quantile head, or any other
+design choice. A new model joins the family as its own subpackage plus its own `domains/`
 page — it shares the download and loading helpers and the calling convention, and nothing else — so
 adding one leaves the existing models untouched.
 
@@ -178,7 +206,8 @@ Two licenses apply, to two different things:
 
 Installing this package therefore does not grant commercial rights to the weights it downloads.
 
-Third-party open source components and their licenses are listed in [Notice.md](Notice.md).
+Third-party open source components and their licenses are listed in [Notice.md](Notice.md) for
+EXAONE Finance and in [domains/demand/Notice.md](domains/demand/Notice.md) for EXAONE Demand.
 
 <br>
 
@@ -191,6 +220,15 @@ Third-party open source components and their licenses are listed in [Notice.md](
              Kang, Dongwan and Choi, Hwanil and Kim, Minjae and Yoo, Sungdong and
              Kang, Junhyeok and Han, Sangjun and Lee, Soonyoung and Ahn, Wonbin},
   journal = {arXiv preprint arXiv:2609.04239},
+  year    = {2026}
+}
+
+@article{lgai2026exaonedemand,
+  title   = {EXAONE Demand 1.0: A Time Series Foundation Model for Demand Forecasting},
+  author  = {Lee, Seunghan and Han, Sangjun and Seo, Jun and Kang, Junhyeok and
+             Lee, Jaehoon and Lim, Tae Yoon and Kang, Dongwan and Choi, Hwanil and
+             Kim, Minjae and Yoo, Sungdong and Lee, Soonyoung and Ahn, Wonbin},
+  journal = {arXiv preprint arXiv:2609.30880},
   year    = {2026}
 }
 ```

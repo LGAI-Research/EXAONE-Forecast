@@ -26,7 +26,7 @@ def load_checkpoint(ckpt_dir: str | os.PathLike, model_cls, config_cls, device=N
     Args:
         ckpt_dir: directory holding ``config.json`` and ``model.safetensors``.
         model_cls: the model class to instantiate.
-        config_cls: the ``PretrainedConfig`` subclass that reads ``config.json``.
+        config_cls: the config class; its ``from_pretrained`` reads ``config.json``.
         device: optional torch device to move the model to.
 
     Returns:
