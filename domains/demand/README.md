@@ -9,7 +9,7 @@
 <br>
 
 <div align="center">
-  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0" style="text-decoration: none;">
+  <a href="https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/🤗-Weights-FC926C?style=for-the-badge" alt="Weights">
   </a>
   <a href="https://arxiv.org/abs/2609.30880" style="text-decoration: none;">
@@ -54,7 +54,7 @@ history, with no per-dataset training.
 </div>
 
 <div align="center">
-  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0/resolve/main/figures/fig_router.png" alt="From raw context to eight statistics to the router's mixture over four experts plus a shared branch" width="100%">
+  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0/resolve/main/figures/fig_router.png" alt="From raw context to eight statistics to the router's mixture over four experts plus a shared branch" width="100%">
   <br>
   <em>Figure 1. The router reads eight scale-free statistics of the raw context and weighs the four
   demand-class experts; a shared branch is added on top with a fixed weight.</em>
@@ -117,7 +117,7 @@ one of the 36 baselines on **all six error metrics, the average rank, and the wi
 MSIS is the best of all 39 rows.
 
 <div align="center">
-  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0/resolve/main/figures/fig_mase.png" alt="MASE over 22 held-out demand datasets for EXAONE Demand and the strongest baselines" width="70%">
+  <img src="https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0/resolve/main/figures/fig_mase.png" alt="MASE over 22 held-out demand datasets for EXAONE Demand and the strongest baselines" width="70%">
   <br>
   <em>Figure 2. MASE over the 22 held-out demand datasets (lower is better). The released model is
   EXAONE Demand (Synthetic).</em>
@@ -168,7 +168,7 @@ A runnable end-to-end example is in [`quickstart.py`](./quickstart.py).
 |---|---|---|---|---|
 | `exaone-demand-1.0.safetensors` | 1.0 | 348M | float32 | Synthetic-only training; 21-quantile head; loaded by `from_pretrained()` |
 
-The file lives in the [Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0)
+The file lives in the [Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0)
 alongside its `config.json`, which describes the architecture. `from_pretrained` fetches both and
 loads the weights verbatim.
 
@@ -206,7 +206,7 @@ promotions are not modelled unless they show up in the series itself.
 
 The **model weights** are released under the **EXAONE AI Model License Agreement 1.2 - NC**, which
 limits use to non-commercial research and education. The full terms ship with the weights on the
-[Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Demand-1.0).
+[Hugging Face repository](https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0).
 
 The **code** in this repository is licensed separately under the
 [BSD-3-Clause-LG AI Research License](../../LICENSE), which permits commercial use.

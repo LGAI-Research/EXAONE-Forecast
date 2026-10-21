@@ -12,7 +12,7 @@ shared, four tied to those demand classes — mixed per series by a router that
 reads eight scale-free statistics of the input window. This design is particular
 to this model and is not shared family-wide.
 
-The weights are published separately at ``LG-AI-Research/EXAONE-Demand-1.0`` on
+The weights are published separately at ``LG-AI-Research/EXAONE-Forecast-for-Demand-1.0`` on
 the Hugging Face Hub and are covered by the EXAONE AI Model License Agreement
 1.2 - NC (non-commercial). Installing this package does not grant commercial
 rights to the weights it downloads. They were trained on synthetic demand data
@@ -41,7 +41,7 @@ __all__ = [
 ]
 
 #: Hub repository holding the released weights.
-HF_REPO_ID = "LG-AI-Research/EXAONE-Demand-1.0"
+HF_REPO_ID = "LG-AI-Research/EXAONE-Forecast-for-Demand-1.0"
 
 #: Name of the weight file inside that repository.
 HF_WEIGHT_FILE = "exaone-demand-1.0.safetensors"
