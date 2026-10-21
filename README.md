@@ -42,7 +42,7 @@ The code here is permissively licensed; the released **weights are non-commercia
 | Model | Domain | Version | Weights | Technical report | Documentation |
 |---|---|---|---|---|---|
 | **EXAONE Finance** | Financial time series | 1.0 | [`LG-AI-Research/EXAONE-Finance-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Finance-1.0) | [arXiv:2609.04239](https://arxiv.org/pdf/2609.04239) | [`domains/finance`](domains/finance/README.md) |
-| **EXAONE Demand** | Demand forecasting | 1.0 | [`LG-AI-Research/EXAONE-Forecast-for-Demand-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0) | [arXiv:2609.30880](https://arxiv.org/pdf/2609.30880) | [`domains/demand`](domains/demand/README.md) |
+| **EXAONE Demand** | Demand forecasting | 1.0 | [`LG-AI-Research/EXAONE-Forecast-for-Demand-1.0`](https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Demand-1.0) | [PDF](domains/demand/EXAONE_Demand_v1.0_Technical_Report.pdf) | [`domains/demand`](domains/demand/README.md) |
 | **EXAONE Forecast** | General time series | — | — | [PDF](domains/general/EXAONE_Forecast_Technical_Report.pdf) | — |
 
 Each model page carries its own architecture, evaluation results, intended use, and limitations.
